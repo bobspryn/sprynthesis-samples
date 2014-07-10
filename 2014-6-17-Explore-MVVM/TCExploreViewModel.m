@@ -68,7 +68,11 @@
             return @(searchString && searchString.length > 0);
         }];
     
-
+    // grab a signal for when the view model becomes active
+    RACSignal *viewWillAppearYES = [self.didBecomeActiveSignal
+        mapReplace:@YES];
+        
+        
     //
     // Popular tag results
     //
@@ -88,10 +92,7 @@
     // whenever it finishes executing we want to change the loading state, skip the initial value of NO
     RACSignal *finishedLoadingPopularTags = [[self.loadPopularTagResults.executing ignore:@YES]
         skip:1];
-    
-    // grab a signal for when the view model becomes active
-    RACSignal *viewWillAppearYES = [self.didBecomeActiveSignal
-        mapReplace:@YES];
+
     
     // we want to get the results whenever we enter explore mode, and not after we've finished retrieving them
     // merge the signals of becoming active and finishing loading tags
