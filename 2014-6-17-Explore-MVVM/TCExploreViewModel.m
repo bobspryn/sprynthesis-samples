@@ -27,9 +27,6 @@
 @property (nonatomic, assign) enum TCExploreSearchCellState usersSearchCellState;
 @property (nonatomic, strong) RACCommand *loadPopularTagResults;
 @property (nonatomic, strong) RACCommand *loadPopularUserResults;
-@property (nonatomic, assign, getter = isLoading) BOOL loading;
-@property (nonatomic, assign, getter = isHashtagsLoading) BOOL hashtagsLoading;
-@property (nonatomic, assign, getter = isUsersLoading) BOOL usersLoading;
 @property (nonatomic, strong) RACCommand *searchCommand;
 @property (nonatomic, assign) BOOL wantsToLoadPopularHastagResults;
 @property (nonatomic, assign) BOOL wantsToLoadPopularUserResults;
